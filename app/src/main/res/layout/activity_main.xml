@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:titleTextColor="@color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        />
+
+        <LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="fill_parent" android:id="@+id/layoutImages" android:layout_marginTop="40dp" android:gravity="center" >
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:contentDescription="@string/resLeft" android:id="@+id/left" android:src="@drawable/resleft" />
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:contentDescription="@string/bandOne" android:id="@+id/colorOne" android:src="@drawable/black"/>
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:contentDescription="@string/bandTwo" android:id="@+id/colorTwo" android:src="@drawable/orange"/>
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:contentDescription="@string/bandThree" android:id="@+id/colorThree" android:src="@drawable/orange"/>
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:contentDescription="@string/spacer" android:id="@+id/spacer" android:src="@drawable/spacer"/>
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:contentDescription="@string/tolerance" android:id="@+id/Tolerance" android:src="@drawable/gold"/>
+        <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:contentDescription="@string/resRight" android:id="@+id/Right" android:src="@drawable/resright"/>
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/layoutSpinners"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_below="@+id/layoutImages">
+        <fragment
+            tools:layout="@layout/color_picker"
+            class="com.example.sergeyv.resistor.ColorPicker"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/colorPicker1"
+            />
+        <fragment
+            tools:layout="@layout/color_picker"
+            class="com.example.sergeyv.resistor.ColorPicker"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/colorPicker2"
+            />
+        <fragment
+            tools:layout="@layout/color_picker"
+            class="com.example.sergeyv.resistor.ColorPicker"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/colorPicker3"
+            />
+        <fragment
+            tools:layout="@layout/color_picker"
+            class="com.example.sergeyv.resistor.ColorPicker"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/colorPicker4"
+            />
+        <!--<NumberPicker android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/bandOne"/>-->
+        <!--<NumberPicker android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/bandTwo"/>-->
+        <!--<NumberPicker android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/bandThree"/>-->
+        <!--<NumberPicker android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/bandTolerance"/>-->
+    </LinearLayout>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/layoutSpinners"
+    android:id="@+id/resistorValue"
+    android:layout_marginTop="20dp"
+    android:gravity="center"
+    android:textSize="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resistorValue"
+        android:id="@+id/toleranceValue"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="20dp"/>
+</RelativeLayout>
